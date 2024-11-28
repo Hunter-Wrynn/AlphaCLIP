@@ -6,7 +6,7 @@ from torchvision import transforms
 
 # load model and prepare mask transform
 device = "cuda" if torch.cuda.is_available() else "cpu"
-model, preprocess = alpha_clip.load("ViT-L/14", alpha_vision_ckpt_pth="./checkpoints/clip_l14_grit20m_fultune_2xe.pth", device=device)  # change to your own ckpt path
+model, preprocess = alpha_clip.load("ViT-L/14", alpha_vision_ckpt_pth="/home/xiaoyicheng/ZSCIR/model/alpha_clip_model/clip_l14_grit20m_fultune_2xe.pth", device=device)  # change to your own ckpt path
 mask_transform = transforms.Compose([
     transforms.ToTensor(), 
     transforms.Resize((224, 224)), # change to (336,336) when using ViT-L/14@336px
